@@ -2,7 +2,8 @@
 // Created by Harry Huang on 2020-10-13.
 //
 
-struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -13,10 +14,14 @@ struct TreeNode {
 
 class Solution
 {
-    bool isSameTree(TreeNode* p, TreeNode* q){
-        if(!p && !q) return true;
-        if(!p || !q) return false;
-        if(p->val != q->val) return false;
+    bool isSameTree(TreeNode *p, TreeNode *q)
+    {
+        if (!p && !q)
+            return false;
+        if (!p || !q)
+            return false;
+        if (p->val != q->val)
+            return false;
         return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
     }
 };

@@ -4,7 +4,8 @@
 
 #include <algorithm>
 
-struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -13,20 +14,20 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class Solution {
+class Solution
+{
 public:
-    bool isBalanced(TreeNode* root) {
-        if(root == nullptr)
+    bool isBalanced(TreeNode *root)
+    {
+        if (root == nullptr)
         {
             return true;
         }
-        return(std::abs(traverse(root->left) - traverse(root->right)) <= 1)
-              && isBalanced(root->left) && isBalanced(root->right);
-
+        return (std::abs(traverse(root->left) - traverse(root->right)) <= 1) && isBalanced(root->left) && isBalanced(root->right);
     }
-    int traverse(TreeNode* root)
+    int traverse(TreeNode *root)
     {
-        if(!root)
+        if (!root)
         {
             return 0;
         }
