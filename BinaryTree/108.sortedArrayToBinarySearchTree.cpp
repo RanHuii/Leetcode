@@ -49,4 +49,22 @@ public:
         }
         return head;
     }
+    TreeNode* sortedArrayToBST2(std::vector<int>& nums)
+    {
+        if(nums.empty())
+            return nullptr;
+        return binaryInOrderTraverse(nums, 0, nums.size() - 1);
+    }
+    TreeNode* binaryInOrderTraverse(std::vector<int> & nums, int left, int right)
+    {
+        if(left > right)
+            return nullptr;
+        int mid = left + (right - left) / 2;
+        auto* node = new TreeNode(nums[mid]);
+        node->left = binaryInOrderTraverse(nums, left, mid - 1);
+        node->right = binaryInOrderTraverse(nums, mid + 1, right);
+
+        return node;
+    }
+
 };
