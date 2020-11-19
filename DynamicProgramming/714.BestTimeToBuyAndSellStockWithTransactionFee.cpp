@@ -19,3 +19,6 @@ public:
         return no_stock;
     }
 };
+
+// TC: O(N)
+// SC: O(1)
