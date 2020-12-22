@@ -1,2 +1,2 @@
 # Leetcode
-This is my leetcode practice using C++.
+This repository keeps a copy of my leetcode practise using C++.
