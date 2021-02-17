@@ -48,6 +48,6 @@ public:
         
         return counter;
     }
-    //TC:O(n)
+    //TC:O(n) n = the length of the longer linkedlist.
     //SC:O(1)
 };
